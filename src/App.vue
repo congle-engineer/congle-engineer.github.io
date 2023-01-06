@@ -29,7 +29,7 @@ export default {
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <HelloWorld msg="Le Cong ahihi" />
+    <HelloWorld msg="Le Cong ahihi 123" />
   </div>
 </template>
 
