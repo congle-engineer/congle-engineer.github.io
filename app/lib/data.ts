@@ -241,3 +241,22 @@ export async function getUser(email: string) {
     throw new Error('Failed to fetch user.');
   }
 }
+
+export async function fetchAllInvoices() {
+  noStore();
+
+  try {
+    const data = await sql<Invoice>`
+      SELECT invoices.id
+      FROM invoices
+      ORDER BY invoices.date DESC`;
+
+    const allInvoices = data.rows.map((invoice) => ({
+      ...invoice,
+    }));
+    return allInvoices;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch the latest invoices.');
+  }
+}
