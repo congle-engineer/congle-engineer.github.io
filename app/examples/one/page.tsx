@@ -23,7 +23,7 @@ export default function ExampleOne() {
 
         <p className="text-lg">
           We are a happy family. We wake up every day with smiles and joys.
-          Can't wait to enjoy life with the way that we want.
+          Cant wait to enjoy life with the way that we want.
         </p>
 
         <button className="p-2 rounded-md border-2 border-black">Show more</button>
