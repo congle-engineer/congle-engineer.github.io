@@ -1,11 +1,14 @@
 import { StarOutlined, EyeOutlined, UserOutlined } from "@ant-design/icons";
+import Image from "next/image";
 
 export default function ExampleOne() {
   return (
     <div className="w-[36rem] rounded-lg bg-white p-12 flex">
-      <img
+      <Image
         src="/couple.jpeg"
-        className="w-32 h-32 shrink-0 self-start rounded-full border-[11px] border-white"
+        width={100}
+        height={100}
+        className="shrink self-start rounded-full border-[11px] border-white"
         alt="Image"
       />
       <div className="space-y-7 text-black">
