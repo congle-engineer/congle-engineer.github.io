@@ -1,7 +1,7 @@
-import { type Author } from "@/interfaces/author";
+import { type Author } from "interfaces/author";
 import Link from "next/link";
-import { Avatar } from "@/components/avatar";
-import { CoverImage } from "@/components/cover-image";
+import { Avatar } from "components/avatar";
+import { CoverImage } from "components/cover-image";
 import { DateFormatter } from "./date-formatter";
 
 type Props = {
