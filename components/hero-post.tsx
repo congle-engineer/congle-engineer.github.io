@@ -1,8 +1,8 @@
-import { Avatar } from "components/avatar";
-import { CoverImage } from "components/cover-image";
-import { type Author } from "interfaces/author";
+import { Avatar } from "./avatar";
+import { CoverImage } from "./cover-image";
+import { type Author } from "../interfaces/author";
 import Link from "next/link";
-import { DateFormatter } from "components/date-formatter";
+import { DateFormatter } from "./date-formatter";
 
 type Props = {
   title: string;
@@ -29,7 +29,7 @@ export function HeroPost({
       <div className="mb-20 md:mb-28 md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8">
         <div>
           <h3 className="mb-4 text-4xl leading-tight lg:text-5xl">
-            <Link href={`/data/${slug}`} className="hover:underline">
+            <Link href={`/posts/${slug}`} className="hover:underline">
               {title}
             </Link>
           </h3>
