@@ -1,4 +1,5 @@
 import { CMS_NAME } from "lib/constants";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export function Intro() {
   return (
@@ -16,6 +17,7 @@ export function Intro() {
         </a>{" "}
         and {CMS_NAME}.
       </h4>
+      <ThemeSwitcher />
     </section>
   );
 }
