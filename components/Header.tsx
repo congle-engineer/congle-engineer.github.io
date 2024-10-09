@@ -1,11 +1,20 @@
 import Link from "next/link";
+import { ThemeSwitcher } from "./ThemeSwitcher";
+import { Container } from "./Container";
 
 export function Header() {
   return (
-    <h2 className="md:tracking-tigher mb-20 mt-8 flex items-center text-2xl font-bold leading-tight tracking-tight md:text-4xl">
-      <Link href="/" className="hover:underline">
-        Blog
-      </Link>
-    </h2>
+    <Container>
+      <section className="mb-16 mt-16 flex flex-row items-center justify-between md:mb-12">
+        <div>
+          <Link href="/">Logo</Link>
+        </div>
+        <div className="flex items-center space-x-4">
+          <Link href="/">Home</Link>
+          <Link href="/">About</Link>
+          <ThemeSwitcher />
+        </div>
+      </section>
+    </Container>
   );
 }

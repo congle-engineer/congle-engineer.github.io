@@ -1,6 +1,5 @@
 import { Container } from "components/Container";
 import { HeroPost } from "components/HeroPost";
-import { Intro } from "components/Intro";
 import { MoreStories } from "components/MoreStories";
 import { getAllPosts } from "lib/api";
 
@@ -12,7 +11,6 @@ export default function Page() {
   return (
     <main>
       <Container>
-        <Intro />
         <HeroPost
           title={heroPost.title}
           coverImage={heroPost.coverImage}

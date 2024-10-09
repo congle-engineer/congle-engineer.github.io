@@ -22,15 +22,6 @@ export function ThemeSwitcher() {
     localStorage.setItem("theme", newTheme); // Save preference in localStorage
   };
 
-  // return (
-  //   <button
-  //     onClick={toggleTheme}
-  //     className="rounded-lg bg-gray-200 p-2 text-sm dark:bg-gray-800"
-  //   >
-  //     Toggle {theme === "light" ? "Dark" : "Light"} Mode
-  //   </button>
-  // );
-
   return (
     <button
       onClick={toggleTheme}
