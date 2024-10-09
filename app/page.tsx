@@ -1,8 +1,8 @@
-import { Container } from "../components/container";
-import { HeroPost } from "../components/hero-post";
-import { Intro } from "../components/intro";
-import { MoreStories } from "../components/more-stories";
-import { getAllPosts } from "../lib/api";
+import { Container } from "components/Container";
+import { HeroPost } from "components/HeroPost";
+import { Intro } from "components/Intro";
+import { MoreStories } from "components/MoreStories";
+import { getAllPosts } from "lib/api";
 
 export default function Page() {
   const allPosts = getAllPosts();

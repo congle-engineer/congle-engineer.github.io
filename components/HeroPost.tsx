@@ -1,8 +1,8 @@
-import { Avatar } from "./avatar";
-import { CoverImage } from "./cover-image";
+import { Avatar } from "./Avatar";
+import { CoverImage } from "./CoverImage";
 import { type Author } from "../interfaces/author";
 import Link from "next/link";
-import { DateFormatter } from "./date-formatter";
+import { DateFormatter } from "./DateFormatter";
 
 type Props = {
   title: string;
