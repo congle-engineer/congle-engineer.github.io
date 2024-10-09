@@ -5,7 +5,7 @@ import { Container } from "./Container";
 export function Header() {
   return (
     <Container>
-      <section className="mb-16 mt-16 flex flex-row items-center justify-between md:mb-12">
+      <div className="mb-16 mt-8 flex flex-row items-center justify-between md:mb-12">
         <div>
           <Link href="/">Logo</Link>
         </div>
@@ -14,7 +14,7 @@ export function Header() {
           <Link href="/">About</Link>
           <ThemeSwitcher />
         </div>
-      </section>
+      </div>
     </Container>
   );
 }
