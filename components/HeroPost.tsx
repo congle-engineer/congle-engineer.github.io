@@ -1,4 +1,4 @@
-import { Avatar } from "./Avatar";
+// import { Avatar } from "./Avatar";
 import { CoverImage } from "./CoverImage";
 import { type Author } from "interfaces/author";
 import Link from "next/link";
@@ -18,7 +18,7 @@ export function HeroPost({
   coverImage,
   date,
   excerpt,
-  author,
+  // author,
   slug,
 }: Props) {
   return (
@@ -39,7 +39,7 @@ export function HeroPost({
         </div>
         <div>
           <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>
-          <Avatar name={author.name} picture={author.picture} />
+          {/* <Avatar name={author.name} picture={author.picture} /> */}
         </div>
       </div>
     </section>

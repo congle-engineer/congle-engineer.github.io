@@ -26,8 +26,6 @@ export default function RootLayout({
       <body
         className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
       >
-        {/* <div className="sticky top-0 z-10">
-        </div> */}
         <Header />
         <div className="min-h-screen">{children}</div>
         <Footer />
