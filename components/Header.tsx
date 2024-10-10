@@ -19,7 +19,7 @@ export function Header() {
         </div>
         <div className="flex items-center space-x-4">
           <Link href="/">Home</Link>
-          <Link href="/">About</Link>
+          <Link href="/about">About</Link>
           <ThemeSwitcher />
         </div>
       </div>
