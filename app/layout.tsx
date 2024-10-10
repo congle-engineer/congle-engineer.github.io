@@ -1,5 +1,5 @@
 import { Footer } from "components/Footer";
-import { CMS_NAME, HOME_OG_IMAGE_URL } from "lib/constants";
+import { HOME_OG_IMAGE_URL } from "lib/constants";
 import type { Metadata } from "next";
 import { Header } from "components/Header";
 import { Inter } from "next/font/google";

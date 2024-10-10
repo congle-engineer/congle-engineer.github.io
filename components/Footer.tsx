@@ -6,7 +6,7 @@ export function Footer() {
       <Container>
         <div className="flex flex-col items-center py-5 md:justify-between md:py-10 lg:flex-row">
           <h3 className="leading-right mb-5 text-center text-xl font-bold tracking-tighter lg:mb-0 lg:w-1/2 lg:pr-4 lg:text-left lg:text-[1.5rem]">
-            Cong Le's blog built with Next.js
+            Cong Le&apos;s blog built with Next.js
           </h3>
           <div className="flex flex-row justify-center space-x-8">
             <svg
