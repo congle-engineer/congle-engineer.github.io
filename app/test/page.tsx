@@ -25,11 +25,21 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Terminal } from "lucide-react";
 
 export default function Test() {
   return (
     <main>
       <Container>
+        <Alert>
+          <Terminal className="h-4 w-4" />
+          <AlertTitle>Heads up!</AlertTitle>
+          <AlertDescription>
+            You can add components and dependencies to your app using the cli.
+          </AlertDescription>
+        </Alert>
+
         <Accordion type="single" collapsible className="mb-4 w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>Is it accessible?</AccordionTrigger>
