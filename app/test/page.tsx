@@ -42,12 +42,42 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Terminal, AlertCircle } from "lucide-react";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 export default function Test() {
   return (
     <main>
       <Container>
-        <SidebarProvider className="mb-4">
+        <AlertDialog>
+          <AlertDialogTrigger asChild className="mb-4">
+            <Button variant="outline">Show Dialog</Button>
+          </AlertDialogTrigger>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+              <AlertDialogDescription>
+                This action cannot be undone. This will permanently delete your
+                account and remove your data from our servers.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>Cancel</AlertDialogCancel>
+              <AlertDialogAction>Continue</AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
+
+        {/* <SidebarProvider className="mb-4">
           <AppSidebar />
           <SidebarInset>
             <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
@@ -78,7 +108,7 @@ export default function Test() {
               <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min"></div>
             </div>
           </SidebarInset>
-        </SidebarProvider>
+        </SidebarProvider> */}
 
         <Alert className="mb-4">
           <Terminal className="h-4 w-4" />
