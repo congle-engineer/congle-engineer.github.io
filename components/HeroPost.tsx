@@ -1,24 +1,23 @@
-// import { Avatar } from "./Avatar";
 import { CoverImage } from "./CoverImage";
-import { type Author } from "interfaces/author";
 import Link from "next/link";
 import { DateFormatter } from "./DateFormatter";
+import { Button } from "@/components/ui/button";
 
 type Props = {
+  subject: string;
   title: string;
   coverImage: string;
   date: string;
   excerpt: string;
-  author: Author;
   slug: string;
 };
 
 export function HeroPost({
+  subject,
   title,
   coverImage,
   date,
   excerpt,
-  // author,
   slug,
 }: Props) {
   return (
@@ -36,10 +35,14 @@ export function HeroPost({
           <div className="mb-4 text-lg md:mb-0">
             <DateFormatter dateString={date} />
           </div>
+          <div className="mt-4">
+            <Button variant="outline" size="sm">
+              {subject}
+            </Button>
+          </div>
         </div>
         <div>
           <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>
-          {/* <Avatar name={author.name} picture={author.picture} /> */}
         </div>
       </div>
     </section>

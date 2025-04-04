@@ -15,10 +15,10 @@ export default function Page() {
         <div className="flex flex-row">
           <div className="mx-4 basis-2/3">
             <HeroPost
+              subject={heroPost.subject}
               title={heroPost.title}
               coverImage={heroPost.coverImage}
               date={heroPost.date}
-              author={heroPost.author}
               slug={heroPost.slug}
               excerpt={heroPost.excerpt}
             />
