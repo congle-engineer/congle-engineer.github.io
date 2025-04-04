@@ -25,13 +25,13 @@ export function MoreStories({ posts }: Props) {
   });
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const savedPage = Number(localStorage.getItem("currentPage")) || 1;
-      setCurrentPage(savedPage);
-    }
-  }, []);
+    // Run on the client only
+    const savedPage = Number(localStorage.getItem("currentPage")) || 1;
+    setCurrentPage(savedPage);
+  }, []); // Empty dependency array means it runs only once, on client-side
 
   useEffect(() => {
+    // Save the page number to localStorage only on the client side
     if (typeof window !== "undefined") {
       localStorage.setItem("currentPage", String(currentPage));
     }
