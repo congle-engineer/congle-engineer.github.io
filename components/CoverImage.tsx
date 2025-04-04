@@ -13,10 +13,12 @@ export function CoverImage({ title, src, slug }: Props) {
     <Image
       src={src}
       alt={`Cover Image for ${title}`}
-      className={cn("w-full rounded-lg shadow-sm", {
-        "aspect-[16/9] object-cover transition-shadow duration-200 hover:shadow-lg":
-          slug,
-      })}
+      className={cn(
+        "aspect-[16/9] h-full w-full rounded-lg object-cover shadow-sm",
+        {
+          "transition-shadow duration-200 hover:shadow-lg": slug,
+        },
+      )}
       width={1300}
       height={630}
     />

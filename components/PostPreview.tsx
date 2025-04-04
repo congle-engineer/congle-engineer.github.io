@@ -1,24 +1,23 @@
-import { type Author } from "interfaces/author";
 import Link from "next/link";
-// import { Avatar } from "./Avatar";
 import { CoverImage } from "./CoverImage";
 import { DateFormatter } from "./DateFormatter";
+import { Button } from "@/components/ui/button";
 
 type Props = {
+  subject: string;
   title: string;
   coverImage: string;
   date: string;
   excerpt: string;
-  author: Author;
   slug: string;
 };
 
 export function PostPreview({
+  subject,
   title,
   coverImage,
   date,
   excerpt,
-  // author,
   slug,
 }: Props) {
   return (
@@ -37,9 +36,11 @@ export function PostPreview({
             </Link>
           </h3>
           <p className="mb-4 text-base leading-relaxed">{excerpt}</p>
+          <Button variant="outline" size="sm">
+            {subject}
+          </Button>
         </div>
       </div>
-      {/* <div className="h-[0.5px] bg-gray-300 dark:bg-gray-600"></div> */}
     </>
   );
 }

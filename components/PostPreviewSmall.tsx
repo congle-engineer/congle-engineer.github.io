@@ -17,10 +17,10 @@ export function PostPreviewSmall({ title, coverImage, date, slug }: Props) {
           <CoverImageSmall slug={slug} title={title} src={coverImage} />
         </div>
         <div className="mx-4 basis-3/4">
-          <div className="text-sm">
+          <div className="mb-2 text-sm">
             <DateFormatter dateString={date} />
           </div>
-          <h3 className="text-lg">
+          <h3 className="text-base">
             <Link href={`/posts/${slug}`} className="hover:underline">
               {title}
             </Link>
