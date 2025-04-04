@@ -8,17 +8,16 @@ type Props = {
   slug?: string;
 };
 
-export function CoverImage({ title, src, slug }: Props) {
+export function CoverImageSmall({ title, src, slug }: Props) {
   const image = (
     <Image
       src={src}
       alt={`Cover Image for ${title}`}
-      className={cn("w-full rounded-lg shadow-sm", {
-        "aspect-[16/9] object-cover transition-shadow duration-200 hover:shadow-lg":
-          slug,
+      className={cn("aspect-square rounded-lg shadow-sm", {
+        "object-cover transition-shadow duration-200 hover:shadow-lg": slug,
       })}
-      width={1300}
-      height={630}
+      width={100}
+      height={100}
     />
   );
 

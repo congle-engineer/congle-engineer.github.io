@@ -25,3 +25,10 @@ export function getAllPosts(): Post[] {
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
+
+export function getPostsBySubject(subject: string): Post[] {
+  const allPosts = getAllPosts();
+  return allPosts
+    .filter((x) => x.subject == subject)
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+}
