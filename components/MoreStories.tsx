@@ -16,26 +16,26 @@ export function MoreStories({ posts }: Props) {
 
   const nextSectionRef = useRef<HTMLDivElement>(null);
 
-  const [currentPage, setCurrentPage] = useState<number>(() => {
-    if (typeof window !== "undefined") {
-      return Number(localStorage.getItem("currentPage"));
-    } else {
-      return 1;
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+
+    const savedPage = localStorage.getItem("currentPage");
+    if (savedPage) {
+      const page = Number(savedPage);
+      if (page >= 1 && page <= totalPages) {
+        setCurrentPage(page);
+      }
     }
-  });
+  }, [totalPages]);
 
   useEffect(() => {
-    // Run on the client only
-    const savedPage = Number(localStorage.getItem("currentPage")) || 1;
-    setCurrentPage(savedPage);
-  }, []); // Empty dependency array means it runs only once, on client-side
-
-  useEffect(() => {
-    // Save the page number to localStorage only on the client side
-    if (typeof window !== "undefined") {
+    if (isMounted) {
       localStorage.setItem("currentPage", String(currentPage));
     }
-  }, [currentPage]);
+  }, [currentPage, isMounted]);
 
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages) {
