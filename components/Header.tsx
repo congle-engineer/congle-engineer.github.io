@@ -19,9 +19,9 @@ export function Header() {
         </div>
         <div className="flex items-center space-x-4 font-semibold">
           <Link href="/life">Đời sống</Link>
-          <Link href="/">Du lịch</Link>
-          <Link href="/">Thể thao</Link>
-          <Link href="/">Âm nhạc</Link>
+          <Link href="/travel">Du lịch</Link>
+          <Link href="/sport">Thể thao</Link>
+          <Link href="/music">Âm nhạc</Link>
           <Link href="/about">Giới thiệu</Link>
         </div>
         <div className="flex items-center space-x-4">
