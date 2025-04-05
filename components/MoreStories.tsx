@@ -19,6 +19,15 @@ export function MoreStories({ posts }: Props) {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [isMounted, setIsMounted] = useState(false);
 
+  const [headerHeight, setHeaderHeight] = useState(80);
+
+  useEffect(() => {
+    const header = document.querySelector("header");
+    if (header) {
+      setHeaderHeight(header.offsetHeight);
+    }
+  }, []);
+
   useEffect(() => {
     setIsMounted(true);
 
@@ -42,10 +51,17 @@ export function MoreStories({ posts }: Props) {
       setCurrentPage(page);
 
       setTimeout(() => {
-        nextSectionRef.current?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+        if (nextSectionRef.current) {
+          const elementPosition =
+            nextSectionRef.current.getBoundingClientRect().top;
+          const offsetPosition =
+            elementPosition + window.pageYOffset - headerHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
       }, 100);
     }
   };
