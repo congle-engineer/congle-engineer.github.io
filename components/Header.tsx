@@ -1,45 +1,67 @@
+"use client";
+
 import Link from "next/link";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { Container } from "./Container";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export function Header() {
+  const pathname = usePathname();
+  const [activeLink, setActiveLink] = useState("");
+
+  const isActive = (href: string) => {
+    return pathname?.startsWith(href) || activeLink === href;
+  };
+
+  const handleLinkClick = (href: string) => {
+    setActiveLink(href);
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm dark:bg-gray-900">
-      {/* <header className="sticky top-0 z-50 bg-white/80 shadow-sm backdrop-blur-sm dark:bg-gray-900/80"> */}
       <Container>
         <div className="flex flex-row items-center justify-between py-4">
           <div>
-            <Link href="/">
+            <Link
+              href="/"
+              className="rounded-md focus:outline-none"
+              onClick={() => handleLinkClick("/")}
+            >
               <Image
                 src="/assets/logo/travel-blog-logo-Photoroom.png"
                 alt="Logo"
                 width={60}
                 height={60}
+                className="transition-opacity hover:opacity-80"
               />
             </Link>
           </div>
-          <div className="flex items-center space-x-4 font-semibold">
-            <Link href="/life">Đời sống</Link>
-            <Link href="/travel">Du lịch</Link>
-            <Link href="/sport">Thể thao</Link>
-            <Link href="/music">Âm nhạc</Link>
-            <Link href="/about">Giới thiệu</Link>
+          <div className="flex items-center space-x-1 font-semibold">
+            {[
+              { href: "/life", label: "Đời sống" },
+              { href: "/travel", label: "Du lịch" },
+              { href: "/sport", label: "Thể thao" },
+              { href: "/music", label: "Âm nhạc" },
+              { href: "/about", label: "Giới thiệu" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => handleLinkClick(item.href)}
+                className={`rounded-md px-4 py-2 transition-all duration-200 ${
+                  isActive(item.href)
+                    ? "bg-gray-200 dark:bg-gray-700"
+                    : "text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
           <div className="flex items-center space-x-4">
             <ThemeSwitcher />
-            {/* <Link href="/">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                x="0px"
-                y="0px"
-                width="20"
-                height="20"
-                viewBox="0 0 30 30"
-              >
-                <path d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"></path>
-              </svg>
-            </Link> */}
           </div>
         </div>
       </Container>
