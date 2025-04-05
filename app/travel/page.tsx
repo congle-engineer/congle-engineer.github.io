@@ -14,7 +14,9 @@ export default async function Page() {
       <Container>
         <div className="flex flex-row">
           <div className="mx-4 basis-2/3">
-            {travelPosts.length > 0 && <MoreStories posts={travelPosts} />}
+            {travelPosts.length > 0 && (
+              <MoreStories posts={travelPosts} isAlreadyInSubject={true} />
+            )}
           </div>
           <div className="basis-1/3">
             {allPosts.length > 0 && <MoreStoriesSmall posts={allPosts} />}

@@ -7,9 +7,10 @@ import { Pagination } from "./Pagination";
 
 type Props = {
   posts: Post[];
+  isAlreadyInSubject?: boolean;
 };
 
-export function MoreStories({ posts }: Props) {
+export function MoreStories({ posts, isAlreadyInSubject = false }: Props) {
   const itemsPerPage = 5;
   const totalItems = posts.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -80,6 +81,7 @@ export function MoreStories({ posts }: Props) {
               date={post.date}
               slug={post.slug}
               excerpt={post.excerpt}
+              isAlreadyInSubject={isAlreadyInSubject}
             />
           ))}
       </div>

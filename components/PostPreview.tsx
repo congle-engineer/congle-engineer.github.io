@@ -10,6 +10,7 @@ type Props = {
   date: string;
   excerpt: string;
   slug: string;
+  isAlreadyInSubject?: boolean;
 };
 
 export function PostPreview({
@@ -19,6 +20,7 @@ export function PostPreview({
   date,
   excerpt,
   slug,
+  isAlreadyInSubject = false,
 }: Props) {
   return (
     <>
@@ -36,7 +38,7 @@ export function PostPreview({
             </Link>
           </h3>
           <p className="mb-4 text-base leading-relaxed">{excerpt}</p>
-          <Badge variant="outline">{subject}</Badge>
+          {!isAlreadyInSubject && <Badge variant="outline">{subject}</Badge>}
         </div>
       </div>
     </>
