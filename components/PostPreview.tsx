@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CoverImage } from "./CoverImage";
 import { DateFormatter } from "./DateFormatter";
-import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 type Props = {
   subject: string;
@@ -36,9 +36,7 @@ export function PostPreview({
             </Link>
           </h3>
           <p className="mb-4 text-base leading-relaxed">{excerpt}</p>
-          <Button variant="outline" size="sm">
-            {subject}
-          </Button>
+          <Badge variant="outline">{subject}</Badge>
         </div>
       </div>
     </>
