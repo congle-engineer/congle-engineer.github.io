@@ -40,7 +40,7 @@ export function HeroPost({
             </Link>
           </h3>
 
-          <div className="text-base text-gray-600 dark:text-gray-400 sm:text-lg">
+          <div className="text-base text-gray-600 dark:text-gray-400">
             <DateFormatter dateString={date} />
           </div>
 
