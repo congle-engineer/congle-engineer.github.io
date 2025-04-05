@@ -25,7 +25,7 @@ export function ThemeSwitcher() {
   return (
     <button
       onClick={toggleTheme}
-      className="rounded-lg bg-gray-200 p-2 text-sm dark:bg-gray-800"
+      className="rounded-full bg-gray-200 p-2 text-sm dark:bg-gray-800"
     >
       <span className="sr-only">Toggle mode</span>
       {theme !== "dark" ? (
