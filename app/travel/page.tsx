@@ -12,15 +12,26 @@ export default async function Page() {
   return (
     <main>
       <Container>
-        <div className="flex flex-row">
-          <div className="mx-4 basis-2/3">
+        {/* Grid layout with responsive columns */}
+        <div className="mx-8 grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {/* Main content - full width on mobile, 2/3 on desktop */}
+          <div className="lg:col-span-2">
             {travelPosts.length > 0 && (
               <MoreStories posts={travelPosts} isAlreadyInSubject={true} />
             )}
           </div>
-          <div className="basis-1/3">
-            {allPosts.length > 0 && <MoreStoriesSmall posts={allPosts} />}
+
+          {/* Sidebar - hidden on mobile, visible on desktop */}
+          <div className="hidden lg:block">
+            <div className="sticky top-8">
+              {allPosts.length > 0 && <MoreStoriesSmall posts={allPosts} />}
+            </div>
           </div>
+        </div>
+
+        {/* Mobile sidebar alternative - show at bottom on mobile */}
+        <div className="mx-8 mt-8 lg:hidden">
+          {allPosts.length > 0 && <MoreStoriesSmall posts={allPosts} />}
         </div>
       </Container>
     </main>

@@ -85,7 +85,7 @@ export function MoreStories({ posts, isAlreadyInSubject = false }: Props) {
             />
           ))}
       </div>
-      <div className="mb-8">
+      <div className="mx-8 mb-8">
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}

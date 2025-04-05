@@ -12,9 +12,10 @@ export function Pagination({
   onPageChange,
 }: PaginationProps) {
   return (
-    <div className="mt-4 flex items-center justify-center gap-2">
+    <div className="mx-8 mt-4 flex items-center justify-center gap-2">
       <Button
         variant="outline"
+        size="sm"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
@@ -25,6 +26,7 @@ export function Pagination({
         <Button
           key={index}
           variant={currentPage === index + 1 ? "default" : "outline"}
+          size="sm"
           onClick={() => onPageChange(index + 1)}
         >
           {index + 1}
@@ -33,6 +35,7 @@ export function Pagination({
 
       <Button
         variant="outline"
+        size="sm"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >

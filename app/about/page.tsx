@@ -6,7 +6,7 @@ export default async function About() {
   return (
     <main>
       <Container>
-        <div className="divide-y divide-gray-200 dark:divide-gray-700">
+        <div className="mx-8 divide-y divide-gray-200 dark:divide-gray-700">
           <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
             <div className="flex flex-col items-center space-x-2 pt-8">
               <Image
@@ -75,17 +75,21 @@ export default async function About() {
                 </Link>
               </div>
             </div>
-            <div className="prose dark:prose-invert max-w-none pb-8 pt-8 text-justify xl:col-span-2">
+            <div className="prose dark:prose-invert max-w-none pb-8 pt-8 xl:col-span-2">
               <div className="text-2xl font-bold">Education</div>
               <br />
-              Bachelor of Computer Science & Engineering (2011 – 2016)
+              Bachelor of Computer Science & Engineering
+              <br />
+              Duration: 2011 – 2016
               <br />
               University: Ho Chi Minh City University of Technology
               <br />
               Major: Computer Science
               <br />
               <br />
-              Master of Computer Science (2016 – 2019)
+              Master of Computer Science
+              <br />
+              Duration: 2016 – 2019
               <br />
               University: Ho Chi Minh City University of Technology
               <br />

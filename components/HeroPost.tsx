@@ -31,7 +31,7 @@ export function HeroPost({
       <div className="space-y-6 md:grid md:grid-cols-2 md:gap-x-12 md:space-y-0 lg:gap-x-16">
         {/* Left Column - Title and Date */}
         <div className="space-y-4">
-          <h3 className="text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-4xl lg:text-5xl">
+          <h3 className="text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-4xl">
             <Link
               href={`/posts/${slug}`}
               className="hover:underline hover:underline-offset-4"
@@ -53,7 +53,7 @@ export function HeroPost({
         </div>
 
         {/* Right Column - Excerpt */}
-        <div className="flex items-center">
+        <div className="flex">
           <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 sm:text-xl md:text-lg lg:text-xl">
             {excerpt}
           </p>
