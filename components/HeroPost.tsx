@@ -21,27 +21,50 @@ export function HeroPost({
   slug,
 }: Props) {
   return (
-    <section>
-      <div className="mb-8">
+    <section className="mb-12">
+      {/* Cover Image - Responsive height */}
+      <div className="mb-6 h-48 overflow-hidden sm:h-64 md:mb-8 md:h-80 lg:h-96">
         <CoverImage title={title} src={coverImage} slug={slug} />
       </div>
-      <div className="mb-10 md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8">
-        <div>
-          <h3 className="mb-4 text-2xl font-semibold leading-tight lg:text-3xl">
-            <Link href={`/posts/${slug}`} className="hover:underline">
+
+      {/* Content */}
+      <div className="space-y-6 md:grid md:grid-cols-2 md:gap-x-12 md:space-y-0 lg:gap-x-16">
+        {/* Left Column - Title and Date */}
+        <div className="space-y-4">
+          <h3 className="text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-4xl lg:text-5xl">
+            <Link
+              href={`/posts/${slug}`}
+              className="hover:underline hover:underline-offset-4"
+            >
               {title}
             </Link>
           </h3>
-          <div className="mb-4 text-lg md:mb-0">
+
+          <div className="text-base text-gray-600 dark:text-gray-400 sm:text-lg">
             <DateFormatter dateString={date} />
           </div>
-          <div className="mt-4">
-            <Badge variant="outline">{subject}</Badge>
+
+          {/* Badge - Hidden on mobile (will show at bottom) */}
+          <div className="hidden md:block">
+            <Badge variant="outline" className="text-sm sm:text-base">
+              {subject}
+            </Badge>
           </div>
         </div>
-        <div>
-          <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>
+
+        {/* Right Column - Excerpt */}
+        <div className="flex items-center">
+          <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 sm:text-xl md:text-lg lg:text-xl">
+            {excerpt}
+          </p>
         </div>
+      </div>
+
+      {/* Badge - Only shown on mobile (below content) */}
+      <div className="mt-6 md:hidden">
+        <Badge variant="outline" className="text-sm sm:text-base">
+          {subject}
+        </Badge>
       </div>
     </section>
   );

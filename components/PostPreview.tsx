@@ -23,24 +23,32 @@ export function PostPreview({
   isAlreadyInSubject = false,
 }: Props) {
   return (
-    <>
-      <div className="flex flex-row border-b border-gray-300 py-8 last:border-b-0 dark:border-gray-600">
-        <div className="basis-1/2">
-          <CoverImage slug={slug} title={title} src={coverImage} />
-        </div>
-        <div className="mx-4 basis-1/2">
-          <div className="mb-4 text-sm">
-            <DateFormatter dateString={date} />
-          </div>
-          <h3 className="mb-3 text-2xl font-semibold leading-snug">
-            <Link href={`/posts/${slug}`} className="hover:underline">
-              {title}
-            </Link>
-          </h3>
-          <p className="mb-4 text-base leading-relaxed">{excerpt}</p>
-          {!isAlreadyInSubject && <Badge variant="outline">{subject}</Badge>}
-        </div>
+    <div className="flex flex-col border-b border-gray-300 py-6 last:border-b-0 dark:border-gray-600 md:flex-row md:py-8">
+      {/* Image - Full width on mobile, half on tablet+ */}
+      <div className="mb-4 w-full md:mb-0 md:basis-1/2 lg:basis-2/5">
+        <CoverImage slug={slug} title={title} src={coverImage} />
       </div>
-    </>
+
+      {/* Content - Full width on mobile, half on tablet+ */}
+      <div className="w-full md:ml-4 md:basis-1/2 lg:basis-3/5">
+        <div className="mb-3 text-xs text-gray-500 dark:text-gray-400 sm:text-sm">
+          <DateFormatter dateString={date} />
+        </div>
+
+        <h3 className="mb-2 text-lg font-semibold leading-tight hover:underline sm:text-xl md:mb-3 md:text-2xl">
+          <Link href={`/posts/${slug}`}>{title}</Link>
+        </h3>
+
+        <p className="mb-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300 sm:text-base md:mb-4">
+          {excerpt}
+        </p>
+
+        {!isAlreadyInSubject && (
+          <Badge variant="outline" className="text-xs sm:text-sm">
+            {subject}
+          </Badge>
+        )}
+      </div>
+    </div>
   );
 }

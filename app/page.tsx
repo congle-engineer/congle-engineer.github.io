@@ -12,20 +12,25 @@ export default function Page() {
   return (
     <main>
       <Container>
-        <div className="flex flex-row">
-          <div className="mx-4 basis-2/3">
-            <HeroPost
-              subject={heroPost.subject}
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        <div className="mx-8 grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <div className="lg:col-span-2">
+            <div className="space-y-4">
+              <HeroPost
+                subject={heroPost.subject}
+                title={heroPost.title}
+                coverImage={heroPost.coverImage}
+                date={heroPost.date}
+                slug={heroPost.slug}
+                excerpt={heroPost.excerpt}
+              />
+
+              {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+            </div>
           </div>
-          <div className="basis-1/3">
-            {morePosts.length > 0 && <MoreStoriesSmall posts={morePosts} />}
+          <div>
+            <div className="space-y-4">
+              {morePosts.length > 0 && <MoreStoriesSmall posts={morePosts} />}
+            </div>
           </div>
         </div>
       </Container>
