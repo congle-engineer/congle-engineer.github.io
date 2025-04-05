@@ -3,9 +3,14 @@ import { HeroPost } from "components/HeroPost";
 import { MoreStories } from "components/MoreStories";
 import { MoreStoriesSmall } from "components/MoreStoriesSmall";
 import { getAllPosts } from "lib/api";
+import { cache } from "react";
 
-export default function Page() {
-  const allPosts = getAllPosts();
+const getCachedPosts = cache(async () => {
+  return getAllPosts();
+});
+
+export default async function Page() {
+  const allPosts = await getCachedPosts();
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
 
