@@ -39,7 +39,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 
-export default function Test() {
+export default async function Test() {
   return (
     <main>
       <Container>
