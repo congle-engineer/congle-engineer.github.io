@@ -23,7 +23,7 @@ export function HeroPost({
   return (
     <section className="mb-4">
       {/* Cover Image - Responsive height */}
-      <div className="mb-6 overflow-hidden md:mb-8 md:h-80 lg:h-96">
+      <div className="mb-6 overflow-hidden md:mb-8">
         <CoverImage title={title} src={coverImage} slug={slug} />
       </div>
 
