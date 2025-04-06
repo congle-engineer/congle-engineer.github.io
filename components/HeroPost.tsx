@@ -21,9 +21,9 @@ export function HeroPost({
   slug,
 }: Props) {
   return (
-    <section className="mb-12">
+    <section className="mb-4">
       {/* Cover Image - Responsive height */}
-      <div className="mb-6 h-48 overflow-hidden sm:h-64 md:mb-8 md:h-80 lg:h-96">
+      <div className="mb-6 overflow-hidden md:mb-8 md:h-80 lg:h-96">
         <CoverImage title={title} src={coverImage} slug={slug} />
       </div>
 
