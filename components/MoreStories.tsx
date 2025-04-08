@@ -30,8 +30,6 @@ export function MoreStories({ posts, isAlreadyInSubject = false }: Props) {
   }, []);
 
   useEffect(() => {
-    setIsMounted(true);
-
     const savedPage = localStorage.getItem("currentPage");
     if (savedPage) {
       const page = Number(savedPage);
@@ -39,6 +37,7 @@ export function MoreStories({ posts, isAlreadyInSubject = false }: Props) {
         setCurrentPage(page);
       }
     }
+    setIsMounted(true);
   }, [totalPages]);
 
   useEffect(() => {
@@ -66,6 +65,8 @@ export function MoreStories({ posts, isAlreadyInSubject = false }: Props) {
       }, 100);
     }
   };
+
+  if (!isMounted) return null;
 
   return (
     <div>
